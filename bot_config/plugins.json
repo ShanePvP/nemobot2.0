@@ -1,5 +1,3 @@
 [
-  "plugins.roles",
-  "plugins.owner_commands"
   "plugins.camera"
 ]
