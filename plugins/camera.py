@@ -17,4 +17,4 @@ class Camera:
         await ctx.send (embed=embed,file=file)
       
 def setup(bot):
-    bot.add_cog(Cmaera(bot))
+    bot.add_cog(Camera(bot))
