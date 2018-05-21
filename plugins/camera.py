@@ -14,7 +14,6 @@ class Camera:
         os.system(f'raspistill -o {file}'
         embed=discord.Embed(color=0xff8000)
         embed.add_field(name=datetime.datetime.now().strftime("%y-%m-%d"), value=datetime.datetime.now().strftime("%H:%M"), inline=False)
-        await self.bot.say(embed=embed)
         await ctx.send (embed=embed,file=file)
       
 def setup(bot):
