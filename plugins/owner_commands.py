@@ -26,7 +26,7 @@ class OwnerCog:
         config_file = plugins.json.read_json('config')
         prefix = config_file['prefix']
         os.system('cd && cd CCTV && git pull https://github.com/5tanly/CCTV')
-        await ctx.send('Updated! Be sure to reload the bot by typing '+prefix+'reload')
+        await ctx.send('Updated!\nBe sure to reload the bot by typing ``'+prefix+'reload``')
 
 def setup(bot):
     bot.add_cog(OwnerCog(bot))
