@@ -15,8 +15,8 @@ import plugins.json
 config_file = json.load(open(os.getcwd()+'/bot_config/config.json'))
 '''
 config_file = plugins.json.read_json('config')
-prefix = config_file[prefix]
-token = config_file[token]
+prefix = config_file['prefix']
+token = config_file['token']
 
 '''
 with open('bot_config/token.txt', 'r') as token_file:
