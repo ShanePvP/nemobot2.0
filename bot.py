@@ -30,15 +30,14 @@ async def on_ready():
 
 if __name__ == '__main__':
     print('------')
-    async def start(self, ctx):
-        for extension in initial_extensions:
-            try:
-                bot.load_extension(extension)
-                await ctx.send(':white_check_mark: Loaded: ``'+extension+'``')
-                print('Plugin Loaded: '+extension)
-            except:
-                await ctx.send(':x: Failed: ``'+extension+'``')
-                print('Plugin Failed: '+extension)
+    for extension in initial_extensions:
+        try:
+            bot.load_extension(extension)
+            #await ctx.send(':white_check_mark: Loaded: ``'+extension+'``')
+            print('Plugin Loaded: '+extension)
+        except:
+            #await ctx.send(':x: Failed: ``'+extension+'``')
+            print('Plugin Failed: '+extension)
             
 
 bot.run(token)
