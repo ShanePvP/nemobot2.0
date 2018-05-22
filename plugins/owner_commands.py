@@ -2,6 +2,7 @@
 from discord.ext import commands
 import plugins.json
 import os
+failedImport = False
 
 class OwnerCog:
 
@@ -19,6 +20,9 @@ class OwnerCog:
                 await ctx.send('Reloaded: ``'+extension+'``')
             except:
                 await ctx.send('Failed: ``'+extension+'``')
+                failedImport = True
+        if failedImport == True:
+            await ctx.send('/n:x: Uh oh! Looks like one or more plugins failed to import!/nPlease see console for details.')
             
     @commands.command(name='update')
     @commands.is_owner()
