@@ -22,8 +22,8 @@ class OwnerCog:
             
     @commands.command(name='update')
     @commands.is_owner()
-    async def bot_update(self, ctx):
-        #os.system('cd && cd CCTV && git pull https://github.com/5tanly/CCTV')
+    async def bot_update(self):
+        os.system('cd && cd CCTV && git pull https://github.com/5tanly/CCTV')
 
 def setup(bot):
     bot.add_cog(OwnerCog(bot))
