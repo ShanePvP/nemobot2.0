@@ -24,6 +24,8 @@ class OwnerCog:
     @commands.is_owner()
     async def bot_update(self, ctx):
         os.system('cd && cd CCTV && git pull https://github.com/5tanly/CCTV')
+        await asyncio.sleep(2)
+        await cog_reload()
 
 def setup(bot):
     bot.add_cog(OwnerCog(bot))
