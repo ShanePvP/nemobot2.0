@@ -12,8 +12,7 @@ class Camera:
     @commands.command(name='pic')
     async def pic(self, ctx):
         path = os.getcwd()+"/camera/pic.jpg"
-        #os.system('raspistill -o os.getcwd()+"/camera/pic.jpg"')
-        #f = discord.File(path, filename="image.png")
+        os.system('raspistill -o os.getcwd()+"/camera/pic.jpg"')
         await ctx.send(file=discord.File(path, filename="image.png"))
       
 def setup(bot):
