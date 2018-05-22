@@ -22,7 +22,7 @@ class OwnerCog:
                 await ctx.send('Failed: ``'+extension+'``')
                 failedImport = True
         if failedImport == True:
-            await ctx.send('\n:x: Uh oh! Looks like one or more plugins failed to import!\nPlease see console for details.')
+            await ctx.send(':x: Uh oh!\n It looks like one or more plugins failed to import!\nPlease see console for details.')
             
     @commands.command(name='update')
     @commands.is_owner()
