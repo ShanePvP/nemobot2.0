@@ -15,7 +15,7 @@ class Camera:
         f = discord.File(path, filename="image.png")
         e = discord.Embed()
         e.set_image(url="attachment://image.png")
-        await messagable.send(file=f, embed=e)
+        await ctx.send(file=f, embed=e)
       
 def setup(bot):
     bot.add_cog(Camera(bot))
