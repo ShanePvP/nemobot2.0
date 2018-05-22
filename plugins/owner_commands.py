@@ -15,9 +15,9 @@ class OwnerCog:
             try:
                 self.bot.unload_extension(extension)
                 self.bot.load_extension(extension)
-                await ctx.send('Reloaded: ``'+extension+'``')
+                await ctx.send('RELOADED: ``'+extension+'``')
             except:
-                pass
+                await ctx.send('FAILED: ``'+extension+'``')
             
     @commands.command(name='update')
     @commands.is_owner()
