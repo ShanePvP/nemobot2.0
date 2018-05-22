@@ -23,7 +23,10 @@ class OwnerCog:
     @commands.command(name='update')
     @commands.is_owner()
     async def bot_update(self, ctx):
+        config_file = plugins.json.read_json('config')
+        prefix = config_file['prefix']
         os.system('cd && cd CCTV && git pull https://github.com/5tanly/CCTV')
+        await ctx.send(f'Updated! Be sure to reload the bot by typing {prefix}reload'
 
 def setup(bot):
     bot.add_cog(OwnerCog(bot))
