@@ -12,11 +12,8 @@ class Camera:
     async def pic(self, ctx):
         path = os.getcwd()+"/camera/pic.jpg"
         #os.system('raspistill -o os.getcwd()+"/camera/pic.jpg"')
-        f = discord.File(path, filename="image.png")
-        #e = discord.Embed()
-        #e.set_image(url="attachment://image.png")
-        #await ctx.send(file=f, embed=e)
-        await ctx.send(file=f)
+        #f = discord.File(path, filename="image.png")
+        await ctx.send(file=discord.File(path, filename="image.png"))
       
 def setup(bot):
     bot.add_cog(Camera(bot))
