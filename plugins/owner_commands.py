@@ -2,7 +2,6 @@
 from discord.ext import commands
 import plugins.json
 import os
-failedImport = False
 
 class OwnerCog:
 
@@ -17,12 +16,9 @@ class OwnerCog:
             try:
                 self.bot.unload_extension(extension)
                 self.bot.load_extension(extension)
-                await ctx.send('Reloaded: ``'+extension+'``')
+                await ctx.send(':white_check_mark: Reloaded: ``'+extension+'``')
             except:
-                await ctx.send('Failed: ``'+extension+'``')
-                failedImport = True
-        if failedImport == True:
-            await ctx.send(':x: Uh oh!\n It looks like one or more plugins failed to import!\nPlease see console for details.')
+                await ctx.send(':x: Failed: ``'+extension+'``')
             
     @commands.command(name='update')
     @commands.is_owner()
