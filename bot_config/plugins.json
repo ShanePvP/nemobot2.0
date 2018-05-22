@@ -1,5 +1,4 @@
 [
   "plugins.owner_commands",
-  "plugins.camera", 
-  "plugins.failTest"
+  "plugins.camera"
 ]
