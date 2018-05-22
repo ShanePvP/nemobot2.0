@@ -10,10 +10,11 @@ class Camera:
 
     @commands.command(name='pic')
     async def pic(self, ctx):
+        path = os.getcwd()+"/camera/pic.jpg"
         os.system('raspistill -o os.getcwd()+"/camera/pic.jpg"')
         embed=discord.Embed(color=0xff8000)
         embed.add_field(name=datetime.datetime.now().strftime("%y-%m-%d"), value=datetime.datetime.now().strftime("%H:%M"), inline=False)
-        await ctx.send(file=os.getcwd()+"/camera/pic.jpg")
+        await ctx.send(file=path)
       
 def setup(bot):
     bot.add_cog(Camera(bot))
