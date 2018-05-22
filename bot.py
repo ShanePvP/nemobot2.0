@@ -33,8 +33,10 @@ if __name__ == '__main__':
     for extension in initial_extensions:
         try:
             bot.load_extension(extension)
+            await ctx.send(':white_check_mark: Reloaded: ``'+extension+'``')
             print('Plugin Loaded: '+extension)
         except:
+            await ctx.send(':x: Failed: ``'+extension+'``')
             print('Plugin Failed: '+extension)
             
 
