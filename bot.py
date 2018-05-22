@@ -50,7 +50,7 @@ if __name__ == '__main__':
         try:
             bot.load_extension(extension)
         except:
-            pass
+            print('FAILED TO LOAD EXTENSION'+extension)
             
 
 bot.run(token)
