@@ -1,3 +1,4 @@
+#!/usr/local/bin/python3
 import discord
 from discord.ext import commands
 import plugins.json
