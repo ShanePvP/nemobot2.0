@@ -4,7 +4,7 @@ import plugins.json
 import os
 import asyncio
 
-async def cog_reload(self, ctx):
+async def cog_reload():
     initial_extensions = plugins.json.read_json('plugins')
     for extension in initial_extensions:
         try:
