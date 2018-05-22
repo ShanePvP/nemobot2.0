@@ -4,6 +4,16 @@ import plugins.json
 import os
 import asyncio
 
+async def cog_reload(self, ctx):
+    initial_extensions = plugins.json.read_json('plugins')
+    for extension in initial_extensions:
+        try:
+            self.bot.unload_extension(extension)
+            self.bot.load_extension(extension)
+            await ctx.send('Reloaded: ``'+extension+'``')
+        except:
+            await ctx.send('Failed: ``'+extension+'``')
+
 class OwnerCog:
 
     def __init__(self, bot):
@@ -11,15 +21,8 @@ class OwnerCog:
         
     @commands.command(name='reload')
     @commands.is_owner()
-    async def cog_reload(self, ctx):
-        initial_extensions = plugins.json.read_json('plugins')
-        for extension in initial_extensions:
-            try:
-                self.bot.unload_extension(extension)
-                self.bot.load_extension(extension)
-                await ctx.send('Reloaded: ``'+extension+'``')
-            except:
-                await ctx.send('Failed: ``'+extension+'``')
+    async def reload(self, ctx):
+        await cog_reload()
             
     @commands.command(name='update')
     @commands.is_owner()
