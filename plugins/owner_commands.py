@@ -25,7 +25,7 @@ class OwnerCog:
     async def bot_update(self, ctx):
         config_file = plugins.json.read_json('config')
         prefix = config_file['prefix']
-        os.system('cd && cd CCTV && git pull https://github.com/5tanly/CCTV')
+        os.system('cd && cd ' + os.getcwd() + ' && git pull https://github.com/5tanly/CCTV')
         await ctx.send('Updated!\nBe sure to reload the plugins by typing ``'+prefix+'reload``')
 
 def setup(bot):
