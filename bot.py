@@ -45,11 +45,11 @@ async def on_ready():
 if __name__ == '__main__':
     print('------')
     for extension in initial_extensions:
-        try:
-            bot.load_extension(extension)
-            print('EXTENSION LOADED SUCCESSFULLY: '+extension)
-        except:
-            print('EXTENSION FAILEDF TO LOAD: '+extension)
+        #try:
+        bot.load_extension(extension)
+            #print('EXTENSION LOADED SUCCESSFULLY: '+extension)
+        #except:
+            #print('EXTENSION FAILEDF TO LOAD: '+extension)
             
 
 bot.run(token)
