@@ -38,19 +38,18 @@ bot.remove_command('help')
 
 @bot.event
 async def on_ready():
-    
-    print('------')
-    print('Logged in as')
     print(bot.user.name)
     print(bot.user.id)
     print('------')
 
 if __name__ == '__main__':
+    print('------')
     for extension in initial_extensions:
         try:
             bot.load_extension(extension)
+            print('EXTENSION LOADED SUCCESSFULLY: '+extension)
         except:
-            print('FAILED TO LOAD EXTENSION: '+extension)
+            print('EXTENSION FAILEDF TO LOAD: '+extension)
             
 
 bot.run(token)
