@@ -1,3 +1,4 @@
+#!/usr/local/bin/python3
 #
 #
 #   Stan's Discord Bot for CCTV
