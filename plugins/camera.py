@@ -10,7 +10,7 @@ class Camera:
 
     @commands.command(name='pic')
     async def pic(self, ctx):
-        file = os.getcwd()+'/camera/pic.jpg
+        file = os.getcwd()+'/camera/pic.jpg'
         os.system(f'raspistill -o {file}'
         embed=discord.Embed(color=0xff8000)
         embed.add_field(name=datetime.datetime.now().strftime("%y-%m-%d"), value=datetime.datetime.now().strftime("%H:%M"), inline=False)
