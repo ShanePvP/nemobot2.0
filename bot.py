@@ -6,7 +6,7 @@
 #
 #
 import os
-os.chdir(os.getcwd())
+os.chdir(os.path.dirname(sys.argv[0]))
 import discord
 from discord.ext import commands
 import asyncio
