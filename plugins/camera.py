@@ -14,7 +14,7 @@ class Camera:
         await ctx.send('Taking picture')
         await ctx.trigger_typing()
         path = os.getcwd()+"/camera/pic.jpg"
-        os.system('raspistill --nopreview --mode 2 --annotate 12 --quality 100 --encoding png --output ' + path)
+        os.system('raspistill --nopreview --mode 2 --annotate 12 --output ' + path)
         await ctx.send(file=discord.File(path, filename="pic.jpg"))
       
 def setup(bot):
