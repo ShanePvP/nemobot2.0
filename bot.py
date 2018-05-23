@@ -5,11 +5,11 @@
 #   Don't copy please <3
 #
 #
-
+import os
+os.chdir(os.getcwd())
 import discord
 from discord.ext import commands
 import asyncio
-import os
 import plugins.json
 
 config_file = plugins.json.read_json('config')
