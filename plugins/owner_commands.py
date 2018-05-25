@@ -17,7 +17,7 @@ class OwnerCog:
     @commands.command(name='shutdown')
     @commands.is_owner()
     async def pi_shutdown(self, ctx):
-        await ctx.send('Shutting Down...')
+        await ctx.send(':wave::skin-tone-3:')
         os.system('sudo shutdown now')
             
     @commands.command(name='update')
