@@ -23,6 +23,7 @@ class OwnerCog:
     @commands.command(name='update')
     @commands.is_owner()
     async def bot_update(self, ctx):
+        await ctx.trigger_typing()
         ##PULL FROM GITHUB
         config_file = plugins.json.read_json('config')
         prefix = config_file['prefix']
