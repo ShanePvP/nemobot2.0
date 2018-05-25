@@ -10,7 +10,7 @@ import sys
 import discord
 from discord.ext import commands
 import asyncio
-os.chdir(os.path.dirname(sys.argv[0]))
+#os.chdir(os.path.dirname(sys.argv[0]))
 import plugins.json
 
 config_file = plugins.json.read_json('config')
