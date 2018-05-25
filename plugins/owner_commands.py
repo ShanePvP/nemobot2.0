@@ -7,29 +7,17 @@ class OwnerCog:
 
     def __init__(self, bot):
         self.bot = bot
-        
-    @commands.command(name='reload')
-    @commands.is_owner()
-    async def cog_reload(self, ctx):
-        initial_extensions = plugins.json.read_json('plugins')
-        for extension in initial_extensions:
-            try:
-                self.bot.unload_extension(extension)
-                self.bot.load_extension(extension)
-                await ctx.send(':white_check_mark: Reloaded: ``'+extension+'``')
-            except:
-                await ctx.send(':x: Failed: ``'+extension+'``')
                 
     @commands.command(name='reboot')
     @commands.is_owner()
     async def pi_reboot(self, ctx):
-        await ctx.send('Rebooting')
+        await ctx.send('Rebooting...')
         os.system('sudo reboot')
         
     @commands.command(name='shutdown')
     @commands.is_owner()
     async def pi_shutdown(self, ctx):
-        await ctx.send('Shutting Down')
+        await ctx.send('Shutting Down...')
         os.system('sudo shutdown now')
             
     @commands.command(name='update')
@@ -39,7 +27,6 @@ class OwnerCog:
         config_file = plugins.json.read_json('config')
         prefix = config_file['prefix']
         os.system('cd && cd ' + os.getcwd() + ' && git pull https://github.com/5tanly/CCTV')
-        await ctx.send('Updated!\nBe sure to reload the plugins by typing ``'+prefix+'reload``')
         
         ##RELOAD PLUGINS
         initial_extensions = plugins.json.read_json('plugins')
