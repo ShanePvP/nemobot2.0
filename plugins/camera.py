@@ -11,7 +11,6 @@ class Camera:
 
     @commands.command(name='pic')
     async def pic(self, ctx):
-        await ctx.send('Taking picture')
         await ctx.trigger_typing()
         path = os.getcwd()+"/camera/pic.jpg"
         os.system('raspistill --nopreview --mode 2 --annotate 12 --output ' + path)
