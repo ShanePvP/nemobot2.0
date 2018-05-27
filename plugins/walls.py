@@ -2,6 +2,7 @@
 import discord
 from discord.ext import commands
 import os
+import plugins.json
 
 config_file = plugins.json.read_json('config')
 
