@@ -40,6 +40,8 @@ class Walls:
                 em.add_field(name =':warning::exclamation:__**CHECK WALLS**__:exclamation::warning:', value='Walls have not been checked in ```https\n'+str(count)+' MINUTES!```', inline=False)
                 em.set_footer(text='Indicate walls are safe by typing \''+bot.config_prefix+'check\'')
                 await channel.send(embed = em)
-        
+
+
+    bot.task = bot.loop.create_task(walls())
 def setup(bot):
     bot.add_cog(Walls(bot))
