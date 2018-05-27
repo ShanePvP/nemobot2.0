@@ -27,7 +27,7 @@ class OwnerCog:
         ##PULL FROM GITHUB
         config_file = plugins.json.read_json('config')
         prefix = config_file['prefix']
-        os.system('cd && cd ' + os.getcwd() + ' && git pull https://github.com/5tanly/CCTV')
+        os.system('cd && cd ' + os.getcwd() + ' && git pull https://github.com/5tanly/nemobot2.0')
         
         ##RELOAD PLUGINS
         initial_extensions = plugins.json.read_json('plugins')
