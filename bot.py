@@ -1,7 +1,7 @@
 #!/usr/local/bin/python3
 #
 #
-#   Stan's Discord Bot for CCTV
+#   Nemo Wall Bot v2.0
 #   Don't copy please <3
 #
 #
