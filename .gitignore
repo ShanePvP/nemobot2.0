@@ -1,4 +1,5 @@
-bot_config/token.txt
-plugins/__pycache__
 .DS_Store
+bot_config/token.txt
+bot_config/coords.db
+plugins/__pycache__
 plugins/ftop.py
