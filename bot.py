@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+#!/usr/local/bin/python3.7
 #
 #
 #   Nemo Wall Bot v2.0
@@ -9,10 +9,14 @@ import discord
 from discord.ext import commands
 import asyncio
 import plugins.json
+import os
 
 config_file = plugins.json.read_json('config')
+with open(os.getcwd()+'/bot_config/token.txt', 'r') as token_file:
+    token = token_file.read().strip()
+print(token)
 prefix = config_file['prefix']
-token = config_file['token']
+#token = config_file['token']
 
 initial_extensions = plugins.json.read_json('plugins')
 
@@ -27,15 +31,15 @@ async def on_ready():
     print('------')
 
 if __name__ == '__main__':
-    print('------')
+    print('--d----')
     for extension in initial_extensions:
-        try:
-            bot.load_extension(extension)
-            #await ctx.send(':white_check_mark: Loaded: ``'+extension+'``')
-            print('Plugin Loaded: '+extension)
-        except:
-            #await ctx.send(':x: Failed: ``'+extension+'``')
-            print('Plugin Failed: '+extension)
-            
+        #try:
+        bot.load_extension(extension)
+            ##await ctx.send(':white_check_mark: Loaded: ``'+extension+'``')
+            #print('Plugin Loaded: '+extension)
+        #except:
+            ##await ctx.send(':x: Failed: ``'+extension+'``')
+            #print('Plugin Failed: '+extension)
+
 
 bot.run(token)

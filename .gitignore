@@ -1,0 +1,8 @@
+
+bot_config/token.txt
+token.txt
+plugins/__pycache__
+.DS_Store
+plugins/x_walls.py
+plugins/ftop.py
+plugins/walls.py
