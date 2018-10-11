@@ -31,7 +31,7 @@ async def on_ready():
     print('------')
 
 if __name__ == '__main__':
-    print('--d----')
+    print('------')
     for extension in initial_extensions:
         #try:
         bot.load_extension(extension)
