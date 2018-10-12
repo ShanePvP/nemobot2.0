@@ -17,13 +17,9 @@ class OwnerCog:
             em = discord.Embed(colour=2067276)
             em.set_author(name='Coordinates Added!', icon_url='https://bit.ly/2CFvJCn')
             em.add_field(name ='__**Faction Name:**__ ', value=_fname, inline=False)
-            #em.add_field(name ='\u200b',value='\u200b',inline=True)
             em.add_field(name ='__**X:**__ ', value=_x, inline=False)
             em.add_field(name ='__**Z:**__ ', value=_z, inline=False)
             em.add_field(name ='__**Notes:**__', value=_note, inline=False)
-            #em.add_field(name ='\u200b',value='\u200b',inline=True)
-            #!!coords ttt 666 555 ttty  yyy t r
-            #em.set_thumbnail(url='https://visage.surgeplay.com/head/'+uuid)
             em.set_footer(text='Added at: '+_time.strftime('%I:%M')+' EST')
             return em
         conn = sqlite3.connect('bot_config/coords.db')
