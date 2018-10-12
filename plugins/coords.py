@@ -1,7 +1,9 @@
 #!/usr/local/bin/python3.7
+import discord
 from discord.ext import commands
 import plugins.json
 import sqlite3
+import datetime
 
 class OwnerCog:
 
@@ -9,8 +11,21 @@ class OwnerCog:
         self.bot = bot
 
     @commands.command(name='coords')
-    async def coords(self, ctx, _fname='', _x='', _z='', *, _note='n/a'):
-
+    async def coords(self, ctx, _fname='', _x='', _z='', *, _note=''):
+        def embed(_fname, _x, _z, _note):
+            _time = datetime.datetime.now()
+            em = discord.Embed(colour=2067276)
+            em.set_author(name='Coordinates Added!', icon_url='https://bit.ly/2CFvJCn')
+            em.add_field(name ='__**Faction Name:**__ ', value=_fname, inline=False)
+            #em.add_field(name ='\u200b',value='\u200b',inline=True)
+            em.add_field(name ='__**X:**__ ', value=_x, inline=False)
+            em.add_field(name ='__**Z:**__ ', value=_z, inline=False)
+            em.add_field(name ='__**Notes:**__', value=_note, inline=False)
+            #em.add_field(name ='\u200b',value='\u200b',inline=True)
+            #!!coords ttt 666 555 ttty  yyy t r
+            #em.set_thumbnail(url='https://visage.surgeplay.com/head/'+uuid)
+            em.set_footer(text='Added at: '+_time.strftime('%I:%M')+' EST')
+            return em
         conn = sqlite3.connect('bot_config/coords.db')
         c = conn.cursor()
         try:
@@ -23,12 +38,11 @@ class OwnerCog:
             conn.commit()
             print('.db file created')
         except:
-            print('.db file already exists')
-        if _fname == '':
+            pass
+        if _fname == '':        #Display all coordinates
             c.execute("SELECT * FROM coords")
-            await ctx.send(str(c.fetchall()).replace('), (','\n').replace('[','').replace(']','').replace('(','').replace(')',''))
-        else:
-            print(_fname + ' added')
+            await ctx.send(str(c.fetchall()).replace('), (','\n').replace('[','').replace(']','').replace('(','').replace(')','').replace('\',',': ').replace('\'',''))
+        else:                   #Add coordinates
             c.execute("""INSERT INTO coords VALUES (
                         :f_name,
                         :coord_x,
@@ -37,7 +51,7 @@ class OwnerCog:
                         )""",{'f_name':_fname,'coord_x':_x,'coord_z':_z,'f_note':_note})
 
             conn.commit()
-
+            await ctx.send(embed=embed(_fname, _x, _z, _note))
         conn.close()
 
 
