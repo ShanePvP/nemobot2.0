@@ -36,21 +36,9 @@ class Walls:
             print('Time: '+str(self.count))
             if (self.count == config_start) or ((self.count - config_start) % config_interval == 0 and self.count > config_start):
                 if self.count == config_start:
-                    await channel.send(str(self.count) + ' minutes!\n@here')
+                    await channel.send(str(self.count) + ' minutes!\n@here', delete_after=int(config_start))
                 else:
-                    await channel.send(str(self.count) + ' minutes!\n@everyone')
-
-    # @commands.command(name='ign')
-    # async def ign(self, ctx, ign=''):
-    #     if ign == '':                                       #Error if no name entered
-    #         await ctx.send('Enter an IGN')
-    #     else:
-    #         try:                                            #Download and add users name, id, and skin
-    #             d_id, d_ign, d_skin = await download_user(ign)
-    #             add_user('{0.id}'.format(ctx.message.author), d_id, d_ign)
-    #             await ctx.send(embed=ign_embed(d_id, d_ign, d_skin))
-    #         except:
-    #             await ctx.send('ERROR: Invalid IGN or IGN already taken!')
+                    await channel.send(str(self.count) + ' minutes!\n@everyone', delete_after=int(config_interval))
 
     @commands.command(name='ign')
     async def ign(self, ctx, ign=''):
@@ -67,12 +55,14 @@ class Walls:
 
     @commands.command(name='check')
     async def check(self, ctx):
-        #try:
-        self.count = 0
-        _discid = '{0.id}'.format(ctx.message.author)
-        _mcid, _mcname, _checks, _mcskin = get_user_from_data(_discid)
-        print(add_check(_discid, _checks))
-        await ctx.send(embed=embed('Walls Checked!', 'Name:', 'Checks:', _mcname, _checks+1, _mcskin, 0x00b159))
+        try:
+            self.count = 0
+            _discid = '{0.id}'.format(ctx.message.author)
+            _mcid, _mcname, _checks, _mcskin = get_user_from_data(_discid)
+            print(add_check(_discid, _checks))
+            await ctx.send(embed=embed('Walls Checked!', 'Name:', 'Checks:', _mcname, _checks+1, _mcskin, 0x00b159))
+        except:
+            await ctx.send('ERROR: Please type ``!ign <name>`` to register!')
 
     @commands.command(name='weewoo')
     async def weewoo(self, ctx):
