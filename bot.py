@@ -5,6 +5,8 @@
 #   Don't copy please <3
 #
 #
+#   embed color palette: https://www.color-hex.com/color-palette/700
+#
 import discord
 from discord.ext import commands
 import asyncio

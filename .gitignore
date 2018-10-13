@@ -3,3 +3,5 @@ bot_config/token.txt
 bot_config/coords.db
 plugins/__pycache__
 plugins/ftop.py
+bot_config/database.db
+bot_config/checks.db

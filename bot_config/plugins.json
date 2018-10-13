@@ -1,4 +1,5 @@
 [
   "plugins.owner_commands",
-  "plugins.coords"
+  "plugins.coords",
+  "plugins.walls"
 ]
