@@ -36,9 +36,9 @@ class Walls:
             print('Time: '+str(self.count))
             if (self.count == config_start) or ((self.count - config_start) % config_interval == 0 and self.count > config_start):
                 if self.count == config_start:
-                    await channel.send(str(self.count) + ' minutes!\n@here', delete_after=int(config_start))
+                    await channel.send(str(self.count) + ' minutes!\n@here', delete_after=int(config_start*60))
                 else:
-                    await channel.send(str(self.count) + ' minutes!\n@everyone', delete_after=int(config_interval))
+                    await channel.send(str(self.count) + ' minutes!\n@everyone', delete_after=int(config_interval*60))
 
     @commands.command(name='ign')
     async def ign(self, ctx, ign=''):
