@@ -43,10 +43,10 @@ class OwnerCog:
                 try:
                     await ctx.send(embed=embed(_fname, _x, _z, _note))
                 except:
-                    await ctx.send('ERROR: Please include a NAME, X-COORD, Z-COORD!')
+                    await ctx.send('ERROR: Please include a NAME, X-COORD, Z-COORD!', delete_after = 10)
             conn.close()
         except:
-            await ctx.send('ERROR: X-COORD and Z-COORD must be NUMBERS!')
+            await ctx.send('ERROR: X-COORD and Z-COORD must be NUMBERS!', delete_after = 10)
 
 def embed(_fname, _x, _z, _note):
     _time = datetime.datetime.now()

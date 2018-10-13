@@ -51,7 +51,7 @@ class Walls:
                 add_user(_discid, _mcid, _mcname)
                 await ctx.send(embed=embed('IGN Updated!', 'Name:', 'ID:', _mcname, _mcid, _mcskin, 0x00aedb))
             except:
-                await ctx.send('ERROR: Invalid IGN or IGN already taken!')
+                await ctx.send('ERROR: Invalid IGN or IGN already taken!', delete_after = 10)
 
     @commands.command(name='check')
     async def check(self, ctx):
@@ -62,7 +62,7 @@ class Walls:
             print(add_check(_discid, _checks))
             await ctx.send(embed=embed('Walls Checked!', 'Name:', 'Checks:', _mcname, _checks+1, _mcskin, 0x00b159))
         except:
-            await ctx.send('ERROR: Please type ``!ign <name>`` to register!')
+            await ctx.send('ERROR: Please type ``!ign <name>`` to register!', delete_after = 10)
 
     @commands.command(name='weewoo')
     async def weewoo(self, ctx):
@@ -87,7 +87,7 @@ class Walls:
 
     @commands.command(name='safe')
     async def safe(self, ctx):
-        await ctx.send('SAFE!')
+        await ctx.send('Safe!')
         self.weewoos = False
 
 def embed(t, f1n, f2n, f1v, f2v, imageurl, color):
