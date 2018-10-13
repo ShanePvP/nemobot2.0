@@ -5,3 +5,5 @@ plugins/__pycache__
 plugins/ftop.py
 bot_config/database.db
 bot_config/checks.db
+bot_config/config.json
+bot_config/config.json
