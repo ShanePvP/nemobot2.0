@@ -38,7 +38,7 @@ class Walls:
                 if self.count == config_start:
                     await channel.send(str(self.count) + ' minutes!\n@here')
                 else:
-                    await channel.send(str(self.count) + ' minutes!\n@role')
+                    await channel.send(str(self.count) + ' minutes!\n@everyone')
 
     # @commands.command(name='ign')
     # async def ign(self, ctx, ign=''):
